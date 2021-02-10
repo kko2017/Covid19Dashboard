@@ -5,10 +5,12 @@
 In this repository, I am going to create a `COVID-19` dashboard mainly using `TypeScript`. The main purpose of this project is to prove what I've learned from [TypeScript101](https://github.com/kko2017/Typescript101). The `COVID-19` overview will be updated on a daily basis.
 
 ## 2. TypeScript Configuration
-- [x] Add JSDoc first
+- [x] Test JSDoc first
 - [x] Initialize NPM
 - [x] Install TypeScript Library
-- [x] Add tsconfig file and set default values 
+- [x] Add tsconfig file and set default values
+- [x] Convert a JavaScript file (app.js) to a TypeScript file (app.ts)
+- [x] Try to convert a TypeScript file by using`tsc` command 
 
 ## 3. References
 + [COVID-19 Dashboard by the Center for Systems Science and Engineering at Johns Hopkins University](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
