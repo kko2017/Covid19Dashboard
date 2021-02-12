@@ -4,15 +4,22 @@
 ## 1. Introduction
 In this repository, I am going to create a `COVID-19` dashboard mainly using `TypeScript`. The main purpose of this project is to prove what I've learned from [TypeScript101](https://github.com/kko2017/Typescript101). The `COVID-19` overview will be updated on a daily basis.
 
-## 2. TypeScript Configuration
-- [x] Test JSDoc first
-- [x] Initialize NPM
-- [x] Install TypeScript Library
+## 2. `TypeScript` Configuration
+- [x] Add JSDoc first in the `JavaScript` file
+- [x] Initialize `npm`
+- [x] Install `TypeScript` Library
 - [x] Add tsconfig file and set default values
-- [x] Convert a JavaScript file (app.js) to a TypeScript file (app.ts)
-- [x] Try to convert a TypeScript file by using`tsc` command 
+- [x] Convert a `JavaScript` file (app.js) to a `TypeScript` file (app.ts)
+- [x] Try to convert a TypeScript file by using`tsc` command
+- [x] `noImpliciitAny` is turned on as `true` in `tsconfig.json`. 
 
-## 3. References
+## 3. Way to apply `TypeScript`
+- Declare `any` as `datatype` to `variables` in the first place.
+- Change `any` to specific datatype (i.e. `string`, `number`, `object`, etc...).
+- Add more libraries such as`babel`, `eslint`, `prettier`, `axios`, `chart.js` in the package.
+
+
+## 4. References
 + [COVID-19 Dashboard by the Center for Systems Science and Engineering at Johns Hopkins University](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
 + [Postman COVID-19 API Resource Center](https://covid-19-apis.postman.com/)
 + [Postrman COVID-19 API Documentation](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#00030720-fae3-4c72-8aea-ad01ba17adf8)
