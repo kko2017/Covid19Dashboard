@@ -27,7 +27,7 @@ const recoveredList = $('.recovered-list');
 const deathSpinner = createSpinnerElement('deaths-spinner');
 const recoveredSpinner = createSpinnerElement('recovered-spinner');
 
-function createSpinnerElement(id: string) {
+function createSpinnerElement(id: string): HTMLDivElement {
   const wrapperDiv = document.createElement('div');
   wrapperDiv.setAttribute('id', id);
   wrapperDiv.setAttribute(
@@ -44,7 +44,6 @@ function createSpinnerElement(id: string) {
 
 // state
 let isDeathLoading = false;
-const isRecoveredLoading = false;
 
 // api
 function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
@@ -68,7 +67,7 @@ function fetchCountryInfo(
 }
 
 // methods
-function startApp() {
+function startApp(): void {
   setupData();
   initEvents();
 }
@@ -136,7 +135,7 @@ function setDeathsList(data: CountrySummaryResponse): void {
   });
 }
 
-function clearDeathList() {
+function clearDeathList(): void {
   deathsList.innerHTML = null;
 }
 
@@ -144,7 +143,7 @@ function setTotalDeathsByCountry(data: CountrySummaryResponse): void {
   deathsTotal.innerText = data[0].Cases.toString();
 }
 
-function setRecoveredList(data: CountrySummaryResponse) {
+function setRecoveredList(data: CountrySummaryResponse): void {
   const sorted = data.sort(
     (a: CountrySummaryInfo, b: CountrySummaryInfo) =>
       getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date)
@@ -163,25 +162,25 @@ function setRecoveredList(data: CountrySummaryResponse) {
   });
 }
 
-function clearRecoveredList() {
+function clearRecoveredList(): void {
   recoveredList.innerHTML = null;
 }
 
-function setTotalRecoveredByCountry(data: CountrySummaryResponse) {
+function setTotalRecoveredByCountry(data: CountrySummaryResponse): void {
   recoveredTotal.innerText = data[0].Cases.toString();
 }
 
-function startLoadingAnimation() {
+function startLoadingAnimation(): void {
   deathsList.appendChild(deathSpinner);
   recoveredList.appendChild(recoveredSpinner);
 }
 
-function endLoadingAnimation() {
+function endLoadingAnimation(): void {
   deathsList.removeChild(deathSpinner);
   recoveredList.removeChild(recoveredSpinner);
 }
 
-async function setupData() {
+async function setupData(): Promise<void> {
   const { data } = await fetchCovidSummary();
   setTotalConfirmedNumber(data);
   setTotalDeathsByWorld(data);
@@ -190,8 +189,9 @@ async function setupData() {
   setLastUpdatedTimestamp(data);
 }
 
-function renderChart(data: any, labels: any) {
-  const ctx = $('#lineChart').getContext('2d');
+function renderChart(data: number[], labels: string[]): void {
+  const lineChart = $('#lineChart') as HTMLCanvasElement;
+  const ctx = lineChart.getContext('2d');
   Chart.defaults.global.defaultFontColor = '#f5eaea';
   Chart.defaults.global.defaultFontFamily = 'Exo 2';
   new Chart(ctx, {
@@ -223,28 +223,28 @@ function setChartData(data: CountrySummaryResponse): void {
   renderChart(chartData, chartLabel);
 }
 
-function setTotalConfirmedNumber(data: CovidSummaryResponse) {
+function setTotalConfirmedNumber(data: CovidSummaryResponse): void {
   confirmedTotal.innerText = data.Countries.reduce(
     (total: number, current: Country) => (total += current.TotalConfirmed),
     0
   ).toString();
 }
 
-function setTotalDeathsByWorld(data: CovidSummaryResponse) {
+function setTotalDeathsByWorld(data: CovidSummaryResponse): void {
   deathsTotal.innerText = data.Countries.reduce(
     (total: number, current: Country) => (total += current.TotalDeaths),
     0
   ).toString();
 }
 
-function setTotalRecoveredByWorld(data: CovidSummaryResponse) {
+function setTotalRecoveredByWorld(data: CovidSummaryResponse): void {
   recoveredTotal.innerText = data.Countries.reduce(
     (total: number, current: Country) => (total += current.TotalRecovered),
     0
   ).toString();
 }
 
-function setCountryRanksByConfirmedCases(data: CovidSummaryResponse) {
+function setCountryRanksByConfirmedCases(data: CovidSummaryResponse): void {
   const sorted = data.Countries.sort(
     (a: Country, b: Country) => b.TotalConfirmed - a.TotalConfirmed
   );
@@ -264,7 +264,7 @@ function setCountryRanksByConfirmedCases(data: CovidSummaryResponse) {
   });
 }
 
-function setLastUpdatedTimestamp(data: CovidSummaryResponse) {
+function setLastUpdatedTimestamp(data: CovidSummaryResponse): void {
   lastUpdatedTime.innerText = new Date(data.Date).toLocaleString();
 }
 
