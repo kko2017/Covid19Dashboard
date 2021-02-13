@@ -26,3 +26,5 @@ In this repository, I am going to create a `COVID-19` dashboard mainly using `Ty
 + [Type Vue without TypeScript](https://blog.usejournal.com/type-vue-without-typescript-b2b49210f0b)
 + [How to add TypeScript to a JavaScript Project](https://www.freecodecamp.org/news/how-to-add-typescript-to-a-javascript-project/)
 + [Notes before adding TypeScript to a JavaScript Project in Korean](https://joshua1988.github.io/ts/etc/convert-js-to-ts.html#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EC%97%90-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%A0-%EB%95%8C-%EC%A3%BC%EC%9D%98%ED%95%B4%EC%95%BC-%ED%95%A0-%EC%A0%90)
++ [Axios for browser and node.js](https://github.com/axios/axios)
++ [Chart.js Documentation](https://www.chartjs.org/)
