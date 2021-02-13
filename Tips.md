@@ -1,4 +1,4 @@
-## 1. Way to apply `TypeScript`
+## How to apply `TypeScript` to `JavaScript` file
 - [x] Add JSDoc first in the `JavaScript` file
 - [x] Initialize `npm`
 - [x] Install `TypeScript` Library
@@ -10,4 +10,7 @@
 - [x] Change `any` to specific datatype (i.e. `string`, `number`, `object`, etc...).
 - [x] Add more libraries such as`babel`, `eslint`, `prettier`, `axios`, `chart.js` in the package.
 - [x] Change `any` to specific `datatype` again as many as possible.
-## 2. [Why do I need to import chart.js with asterisk (*)](https://stackoverflow.com/questions/56238356/understanding-esmoduleinterop-in-tsconfig-file)
+- [X] Add `strict` in `tsconfig.json`, then define type again.
+
+### Additional Information
++ [Why do I need to import chart.js with asterisk (*)](https://stackoverflow.com/questions/56238356/understanding-esmoduleinterop-in-tsconfig-file)
