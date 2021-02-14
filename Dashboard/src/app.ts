@@ -128,7 +128,7 @@ function setDeathsList(data: CountrySummaryResponse): void {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
     const span = document.createElement('span');
-    span.textContent = value.Cases.toString();
+    span.textContent = value.Cases.toLocaleString('en-CA');
     span.setAttribute('class', 'deaths');
     const p = document.createElement('p');
     p.textContent = new Date(value.Date).toLocaleDateString().slice(0, -1);
@@ -143,7 +143,7 @@ function clearDeathList(): void {
 }
 
 function setTotalDeathsByCountry(data: CountrySummaryResponse): void {
-  deathsTotal.innerText = data[0].Cases.toString();
+  deathsTotal.innerText = data[0].Cases.toLocaleString('en-CA');
 }
 
 function setRecoveredList(data: CountrySummaryResponse): void {
@@ -155,7 +155,7 @@ function setRecoveredList(data: CountrySummaryResponse): void {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
     const span = document.createElement('span');
-    span.textContent = value.Cases.toString();
+    span.textContent = value.Cases.toLocaleString('en-CA');
     span.setAttribute('class', 'recovered');
     const p = document.createElement('p');
     p.textContent = new Date(value.Date).toLocaleDateString().slice(0, -1);
@@ -170,7 +170,7 @@ function clearRecoveredList(): void {
 }
 
 function setTotalRecoveredByCountry(data: CountrySummaryResponse): void {
-  recoveredTotal.innerText = data[0].Cases.toString();
+  recoveredTotal.innerText = data[0].Cases.toLocaleString('en-CA');
 }
 
 function startLoadingAnimation(): void {
@@ -230,21 +230,21 @@ function setTotalConfirmedNumber(data: CovidSummaryResponse): void {
   confirmedTotal.innerText = data.Countries.reduce(
     (total: number, current: Country) => (total += current.TotalConfirmed),
     0
-  ).toString();
+  ).toLocaleString('en-CA');
 }
 
 function setTotalDeathsByWorld(data: CovidSummaryResponse): void {
   deathsTotal.innerText = data.Countries.reduce(
     (total: number, current: Country) => (total += current.TotalDeaths),
     0
-  ).toString();
+  ).toLocaleString('en-CA');
 }
 
 function setTotalRecoveredByWorld(data: CovidSummaryResponse): void {
   recoveredTotal.innerText = data.Countries.reduce(
     (total: number, current: Country) => (total += current.TotalRecovered),
     0
-  ).toString();
+  ).toLocaleString('en-CA');
 }
 
 function setCountryRanksByConfirmedCases(data: CovidSummaryResponse): void {
@@ -256,7 +256,7 @@ function setCountryRanksByConfirmedCases(data: CovidSummaryResponse): void {
     li.setAttribute('class', 'list-item flex align-center');
     li.setAttribute('id', value.Slug);
     const span = document.createElement('span');
-    span.textContent = value.TotalConfirmed.toString();
+    span.textContent = value.TotalConfirmed.toLocaleString('en-CA');
     span.setAttribute('class', 'cases');
     const p = document.createElement('p');
     p.setAttribute('class', 'country');
